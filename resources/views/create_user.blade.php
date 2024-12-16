@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.app')
 @section('content')
 <div class="container">
     <form action="{{ route('user.store') }}" method="post">
@@ -14,6 +14,12 @@
             <input type="text" id="npm" name="npm" value="{{ old('npm') }}" class="@error('npm') input-invalid @enderror">
             @error('npm')
                 <div class="pesan-error">{{ $message }}</div>
+            @enderror
+
+            <label for="foto">Foto: </label>
+            <input type="file" id="foto" name="foto" value="{{ old('foto') }}" class="@error('foto') input-invalid @enderror"><br>
+            @error('foto')
+            <div class="pesan-error">{{ $message }}</div>
             @enderror
 
             <label for="kelas_id">Kelas:</label>
@@ -32,4 +38,5 @@
             <input type="submit" value="Submit">
     </form>
 </div>
+
 @endsection

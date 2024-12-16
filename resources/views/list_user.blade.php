@@ -44,6 +44,20 @@
             background-color: #3b997d;
         }
 
+        .btn-detail {
+            text-decoration: none;
+            background-color: #0b5f5a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn-detail:hover {
+            background-color: #3b997d;
+        }
+
         .table-container {
             width: 100%;
             overflow-x: auto;
@@ -105,6 +119,7 @@
                     <th scope="col">Nama</th>
                     <th scope="col">NPM</th>
                     <th scope="col">Kelas</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -115,6 +130,7 @@
                         <td>{{ $user['nama'] }}</td>
                         <td>{{ $user['npm'] }}</td>
                         <td>{{ $user['nama_kelas'] }}</td>
+                        <td><a href="{{ route('user.show', $user->id) }}" class="btn-detail">Detail</a></td>
                         <td></td>
                     </tr>
                 @endforeach

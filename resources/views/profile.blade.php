@@ -74,12 +74,12 @@
 
 <div class="card">
     <div class="profile-pp">
-        <img src="/assets/images/profile.jpg" alt="Profile Image" class="profile-img">
+        <img src="{{ asset('storage/'. $user->foto) }}" alt="Profile Image" class="profile-img">
     </div>
     <div class="info">
-        <div class="label">{{ $nama }}</div>
-        <div class="label">{{ $npm }}</div>
-        <div class="label">{{ $nama_kelas }}</div>
+        <h1 class="label">{{ $user->nama }} </h1>
+        <h1 class="label">{{ $user->npm }}  </h1>
+        <h1 class="label">{{ $user->nama_kelas  ?? 'Kelas tidak ditemukan' }}</h1>
     </div>
 </div>
 
